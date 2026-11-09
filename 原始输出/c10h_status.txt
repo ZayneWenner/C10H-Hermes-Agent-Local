@@ -1,0 +1,14 @@
+﻿
+┌─────────────────────────────────────────────────────────┐
+│                 ☤ Hermes Agent Status                  │
+└─────────────────────────────────────────────────────────┘
+
+  Model:        gemma4:e2b
+  Provider:     custom
+  Providers:    Custom endpoint
+  Gateway:      ✓ running
+  Platforms:    none configured
+  Jobs:         1 active, 1 total
+
+  Run 'hermes status --full' for every section
+
