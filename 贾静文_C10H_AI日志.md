@@ -1,7 +1,7 @@
 # 贾静文 · C10H 安装并驾驭 Hermes Agent · AI 日志
 
 提交日期：2026-11-09
-平台挑战：C10H（challengeId `ch-20260717031609-rnur5a`，平台详情接口返回 `NOT_FOUND`，需求按本地资料包 `挑战_C10H 安装并驾驭 Hermes Agent_rnur5a_完整资料` 执行）
+平台挑战：C10H 安装并驾驭 Hermes Agent（challengeId `ch-20260717031609-rnur5a`，`get-challenge` 核对状态 `published`，交付物要求 `*安装记录*`、`*配置说明*`、`*demo*`、`*AI日志*`）
 机器：Windows，本地离线模型 Ollama `gemma4:e2b`
 
 ---
@@ -255,7 +255,7 @@ $ hermes skills list
 
 | 卡点 | 现象 | 处理 |
 |---|---|---|
-| 平台拿不到 C10H 详情 | `get-challenge` 返回 `NOT_FOUND` / `挑战不存在` | 改用本地资料包 `CHALLENGE.md`(10783 字符) + `rubric.json`，不重试 |
+| 平台拿不到 C10H 详情 | `get-challenge` 返回 `NOT_FOUND` / `挑战不存在`，但 `list-challenges` 里同一 ID 是 `published` | 真因是插件运行时只在"单参数"时解析 JSON 载荷，被包装器拆分后载荷丢失；改用 `--flag value` 形式复核，返回 `published` 详情。教训：接口报"不存在"时先分清是对象不存在还是自己的参数没送到 |
 | 版本号 `vunknown` | 自检显示 `vunknown (2026.9.24)` | 判断为 git 安装无版本标签，非故障 |
 | `hermes status` 说 gateway stopped | 但 `gateway_state.json` 显示 running | 读 argv 发现 `--idle-exit`：空闲退出属设计；建 cron 后 gateway 自动拉起（PID 47232） |
 | 以为要 `torch`/GPU | 直觉认为本地大模型必须显卡 | 实际 4.6GB 的 gemma4:e2b 在现有配置下就能应答，无需额外加速 |
