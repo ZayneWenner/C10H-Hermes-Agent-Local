@@ -1,0 +1,15 @@
+﻿
+┌─────────────────────────────────────────────────────────────────────────┐
+│                         Scheduled Jobs (profile: default)               │
+└─────────────────────────────────────────────────────────────────────────┘
+
+  f2a519ad7af8 [active]
+    Name:      作业预检晨报
+    Schedule:  0 9 * * *
+    Repeat:    ∞
+    Next run:  2026-11-10T09:00:00+08:00
+    Deliver:   local
+    Timezone:  Asia/Shanghai
+    Last run:  2026-11-09T22:00:01.721049+08:00  ok
+    Execution: completed  d64685e2654243519d8d12994b03ad13
+
