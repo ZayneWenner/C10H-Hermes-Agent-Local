@@ -1,0 +1,7 @@
+model:
+  default: "gemma4:e2b"
+  provider: "custom"
+  base_url: "http://127.0.0.1:11434/v1"
+  api_key: "ollama-local"
+  ollama_num_ctx: 65536
+  context_length: 65536
